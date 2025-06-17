@@ -14,10 +14,10 @@ int main(void)
 {
 	char c;
 
-	for (c = 97; c <= 121; ++c)
+	for (c = 97; c <= 122; ++c)
 	{
-		printf("%c", c);
+		putchar(c);
 	}
-	printf("%c\n", c);
+	putchar(10);
 	return (0);
 }
