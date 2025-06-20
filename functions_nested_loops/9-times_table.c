@@ -20,20 +20,21 @@ void times_table(void)
 			if (n == 0)
 			{
 				_putchar('0' + o);
-				_putchar(',');
 			}
 			else if ((o <= 9) || (m == 0 && n != 0))
 			{
 				_putchar(' ');
 				_putchar(' ');
 				_putchar('0' + o);
-				_putchar(',');
 			}
 			else
 			{
 				_putchar(' ');
 				_putchar('0' + (o / 10));
 				_putchar('0' + (o % 10));
+			}
+			if (n != 9)
+			{
 				_putchar(',');
 			}
 		}
