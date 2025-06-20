@@ -2,7 +2,7 @@
 
 /**
  * _abs - gives absolute value of an int
- * @int : takes an int value
+ * @i : takes an int value
  (*
  * Description: Longer description of the function)?
 (* section header: Section description)*
