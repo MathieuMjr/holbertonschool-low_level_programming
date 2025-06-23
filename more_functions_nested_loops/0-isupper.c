@@ -16,7 +16,7 @@ int _isupper(int c)
 	{
 		i = 1;
 	}
-	else if (c >= 'a' && c <= 'z')
+	else if ((c >= 32 && c <= 64) || (c >= 91 && c <= 126))
 	{
 		i = 0;
 	}
