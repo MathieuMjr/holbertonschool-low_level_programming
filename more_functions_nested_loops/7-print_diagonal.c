@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_diagonal - print a diagonal of \
- * @n : an int that tells you how many time you print "_"
+ * print_diagonal - print a diagonal
+ * @n: an int number of lines
  (*
  * Description: Longer description of the function)?
 (* section header: Section description)*
@@ -17,25 +17,17 @@ void print_diagonal(int n)
 	{
 		_putchar('\n');
 	}
-
 	else
 	{
-	for (t = 1; t < n + 1 ; ++t)
-		{
-		if (t == 0)
-		{
-			_putchar('\\');
-			_putchar('\n');
-		}
-		else
+		for (t = 1; t < n + 1 ; ++t)
 		{
 			for (m = 1; m < t; ++m)
-				{
+			{
 				_putchar(' ');
-				}
+			}
 			_putchar('\\');
 			_putchar('\n');
-		}
 		}
 	}
 }
+
