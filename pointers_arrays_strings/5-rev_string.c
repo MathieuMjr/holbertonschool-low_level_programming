@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_rev - print a string backward
+ * rev_string - short description
  * @s: adress of a char var
  (*
  * Description: Longer description of the function)?
@@ -10,5 +10,19 @@
  */
 void rev_string(char *s)
 {
-	
+	int i = 0;
+	int j;
+	int c;
+
+	while (s[i])
+	{
+		++i;
+	}
+
+	for (j = 0; j <= i / 2; ++j)
+	{
+		c = *(s + j);
+		*(s + j) = *(s + (i - (j + 1)));
+		*(s + (i - (j + 1))) = c;
+	}
 }
