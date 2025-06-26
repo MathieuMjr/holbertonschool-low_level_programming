@@ -40,6 +40,3 @@ int _atoi(char *s)
 	}
 	return (nbb);
 }
-/* On va essayer d'ajouter les entiers dans un int, à chaque fois il faudra
-* multiplier le chiffre en cours par un 10^ ; ça doit pouvoir être un int
-* sans être un pointeur*/
