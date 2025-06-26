@@ -15,6 +15,8 @@ int _atoi(char *s)
 	int k;	/* boucle d'action entre les deux positions*/
 	int nbb = 0; /* variable accumulant les chiffres voulus*/
 	int l = 0; /* compteur de longueur de chaîne*/
+	int minus = 0; /*compteur de "-"*/
+	int mi = 0; /*compteur de boucle*/
 
 	while (s[l] != '\0')
 	{
@@ -30,7 +32,12 @@ int _atoi(char *s)
 	{
 		nbb = nbb * 10 + (s[k] - 48);
 	}
-	if (s[i - 1] == '-' && (s[0] < '0' || s[0] > '9'))
+	for(mi = 0; (s[mi] < '0' || s[mi] > '9') && mi <= l; ++mi)
+	{
+		if (s[mi] == '-')
+			++minus;
+	}
+	if (minus % 2 == 1)
 	{
 		nbb = -nbb; 
 	}
