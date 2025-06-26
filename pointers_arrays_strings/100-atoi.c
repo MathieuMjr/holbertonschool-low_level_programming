@@ -20,20 +20,16 @@ int _atoi(char *s)
 	{
 		++l;
 	}
-		printf("Valeur de l:%d\n", l);
 	for( i = 0; (s[i] < '0' || s[i] > '9'); ++i)
 	{
 	}
-		printf("Valeur de i: %d\n", i);
 	for (j = i; (s[j] >= '0' && s[j] <= '9') && (j < l); ++j)
 	{
 	}
-		printf("Valeur de j: %d\n", j);
 	for (k = i; k < j; ++k)
 	{
 		nbb = nbb * 10 + (s[k] - 48);
 	}
-		printf("Valeur de k: %d\n", k);
 	if (s[i - 1] == '-' && (s[0] < '0' || s[0] > '9'))
 	{
 		nbb = -nbb; 
