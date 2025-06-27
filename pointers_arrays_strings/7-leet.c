@@ -25,10 +25,6 @@ char *leet(char *str)
 			{
 				str[i] = n[j];
 			}
-			else
-			{
-				str[i] = str[i];
-			}
 		}
 		++i;
 	}
