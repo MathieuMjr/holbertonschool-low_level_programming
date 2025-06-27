@@ -2,7 +2,7 @@
 
 /**
  * reverse_array - Reverse content of an array
- * @*a: Pointer to the destination of an int array.
+ * @a: Pointer to the destination of an int array.
  * @n: size of this array.
  (*
  * Description: if string 1 is greater than string 2, return a positive
@@ -12,7 +12,7 @@
  */
 
 void reverse_array(int *a, int n)
-{	
+{
 	int j;
 	int c;
 
