@@ -14,6 +14,8 @@ int _strcmp(char *s1, char *s2)
 {
 	int i = 0;
 	int j = 0;
+	int nb;
+	int k;
 
 	while (s1[i] != '\0')
 	{
@@ -23,16 +25,22 @@ int _strcmp(char *s1, char *s2)
 	{
 		++j;
 	}
-	if (i < j)
+	for (k = 0; k <= j && k <= i; ++k)
 	{
-		return (-15);
+		if (s1[k] == s2[k])
+		{
+			nb = 0;
+		}
+		else if (s1[k] < s2[k])
+		{
+			nb = s1[k] - s2[k];
+			break;
+		}
+		else
+		{
+			nb = s1[k] - s2[k];
+			break;
+		}
 	}
-	else if (i > j)
-	{
-		return (15);
-	}
-	else
-	{
-		return (0);
-	}
+	return (nb);
 }
