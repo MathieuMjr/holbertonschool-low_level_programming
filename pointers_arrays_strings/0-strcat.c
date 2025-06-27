@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcpy - takes a source and put it in an array
+ * _strcat - append a src string to a dest one
  * @dest: array of destination
  * @src: string to use as source to put in the array
  (*
@@ -14,7 +14,7 @@ char *_strcat(char *dest, char *src)
 	int i = 0;
 	int j = 0;
 	int k;
-	
+
 	while (dest[i] != '\0')
 	{
 		++i;
