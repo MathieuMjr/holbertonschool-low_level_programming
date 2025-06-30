@@ -35,5 +35,12 @@ char *_strpbrk(char *s, char *accept)
 			++j;
 		}
 	}
-	return (NULL);
+	if ((s[j + 1]) == '\0')
+	{
+		return (NULL);
+	}
+	else
+	{
+	return (s + j);
+	}
 }
