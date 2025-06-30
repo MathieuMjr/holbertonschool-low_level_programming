@@ -28,5 +28,12 @@ char *_strchr(char *s, char c)
 			break;
 		}
 	}
-	return (s + (i));
+	if (i == j - 1)
+	{
+		return (NULL);
+	}
+	else
+	{
+		return (s + (i));
+	}
 }
