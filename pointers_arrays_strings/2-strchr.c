@@ -28,7 +28,7 @@ char *_strchr(char *s, char c)
 			break;
 		}
 	}
-	if (i == j - 1)
+	if (i == j)
 	{
 		return (NULL);
 	}
