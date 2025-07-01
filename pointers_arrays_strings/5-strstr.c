@@ -14,38 +14,22 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i = 0;
 	int j;
-	int k = 0;
-	int l = 0;
 
-	while (needle[k] != '\0')
+	while (haystack[i] != '\0')
 	{
-		k++;
-	}
-	while (haystack[l] != '\0')
-	{
-		++l;
-	}
-	printf("valeur de k: %d\n", k);
-	while (i < (l - k))
-	{
-		if ((haystack[i]) == (needle[0]))
+		j = 0;
+		while (haystack[i + j] == needle[j])
 		{
-			for (j = 1; needle[j] != '\0'; ++j)
+			while ((needle[j]) != '\0' && (haystack[i + j] == needle[j]))
 			{
-				if (haystack[i + j] != needle[0 + j])
-				{
-					break;
-				}
-			}
-			if (j == k)
-			{
-				return (haystack + i);
+				++j;
 			}
 		}
-		else
+		if (needle[j] == '\0')
 		{
-			++i;
+			return (haystack + i);
 		}
+		i++;
 	}
 	return (NULL);
 }
