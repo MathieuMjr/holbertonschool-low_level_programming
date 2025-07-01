@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * pow_recursion - gives you any number raised to any power
+ * _pow_recursion - gives you any number raised to any power
  * @x: the number you want to raised
  * @y: the power
  (*
