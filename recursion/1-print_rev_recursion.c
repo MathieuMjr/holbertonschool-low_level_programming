@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _print_rev_recursion - put a string backward 
+ * _print_rev_recursion - put a string backward
  * @s: point the adress of a string
  (*
  * Description: Longer description of the function)?
