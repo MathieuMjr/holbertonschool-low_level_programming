@@ -13,14 +13,17 @@ int _pow_recursion(int x, int y)
 {
 	if (y == 0)
 	{
+		// Cas de base : tout nombre élevé à la puissance 0 vaut 1
 		return (1);
 	}
 	else if (y < 0)
 	{
+		// Cas d'erreur : la fonction ne gère pas les exposants négatifs
 		return (-1);
 	}
 	else
 	{
+		// Appel récursif : x^y = x * x^(y-1)
 		return (x * _pow_recursion(x, y - 1));
 	}
 }
