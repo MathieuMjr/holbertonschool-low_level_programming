@@ -12,20 +12,19 @@
  */
 int sqrt_med(int i, int n)
 {
-	if ((i * i) == n)
+	if ((i * i) == n) // Cas où i² est exactement égal à n → on a trouvé la racine
 	{
 		return (i);
 	}
-	if (i > n)
+	if (i > n) // Si i dépasse n sans trouver de carré exact → pas de racine entière
 	{
 		return (-1);
 	}
-	else
+	else // Sinon, on teste avec le prochain i
 	{
 		return (sqrt_med(i + 1, n));
 	}
 }
-
 /**
  * _sqrt_recursion - use sqrt_med to return
  * natural square root of n
@@ -37,5 +36,5 @@ int sqrt_med(int i, int n)
  */
 int _sqrt_recursion(int n)
 {
-	return (sqrt_med(0, n));
+	return (sqrt_med(0, n)); // Appel du helper en commençant par i = 0
 }
