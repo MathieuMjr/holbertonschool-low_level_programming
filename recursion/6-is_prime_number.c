@@ -12,15 +12,15 @@
  */
 int prime_number_med(int i, int n)
 {
-	if (n % i == 0)
+	if (n % i == 0) // Si n est divisible par i sans reste → n n’est pas premier
 	{
 		return (0);
 	}
-	else if (i * i > n)
+	else if (i * i > n) // Si i dépasse √n, aucun diviseur trouvé → n est premier
 	{
 		return (1);
 	}
-	else
+	else // Sinon, on continue à tester avec i + 1
 	{
 		return (prime_number_med(i + 1, n));
 	}
@@ -36,9 +36,9 @@ int prime_number_med(int i, int n)
  */
 int is_prime_number(int n)
 {
-	if (n <= 1)
+	if (n <= 1) // Les nombres <= 1 ne sont pas premiers
 	{
 		return (0);
 	}
-	return (prime_number_med(2, n));
+	return (prime_number_med(2, n)); // Appel du helper en commençant par i = 2
 }
