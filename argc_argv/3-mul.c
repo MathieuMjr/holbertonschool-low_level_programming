@@ -24,7 +24,8 @@ int main(int argc, char *argv[])
 	}
 
 	/* Vérification du nombre d'arguments */
-	if (i > 3 || i == 1)  /* Si plus de 2 arguments fournis ou un seul (le nom du programme) */
+	if (i > 3 || i <= 2)  /* Si plus de 2 arguments fournis*/
+						/*ou un seul (le nom du programme) */
 	{
 		printf("Error\n");  /* Affiche un message d'erreur */
 		return (1);         /* Retourne 1 pour indiquer une erreur */
