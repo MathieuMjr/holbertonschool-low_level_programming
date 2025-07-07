@@ -9,25 +9,31 @@
  *
  * Return: pointer to a char.
  */
-char *create_array(unsigned int size, char c)
+char *create_array(unsigned int size, char c) 
 {
-	char *array;
-	unsigned int i;
+	char *array;        /* Pointeur vers le tableau à allouer */
+	unsigned int i;     /* Compteur pour la boucle */
 
+	/* Si la taille est nulle, on retourne NULL */
 	if (size == 0)
 	{
 		return (NULL);
 	}
 
+	/* Allocation de la mémoire pour 'size' caractères */
 	array = malloc(size * sizeof(char));
-	if (array == NULL) /* toujours vérifier si j'ai eu assez */
-						/* mémoire dispo pour que malloc fonctionne */
+	if (array == NULL)
 	{
+		/* Vérification de l'échec d'allocation mémoire */
 		return (NULL);
 	}
-	for (i = 0; i <= size; ++i)
+
+	/* Initialisation du tableau avec le caractère 'c' */
+	for (i = 0; i < size; ++i) /* ⚠️ ici on corrige la condition : i < size */
 	{
 		array[i] = c;
 	}
+
+	/* On retourne le tableau initialisé */
 	return (array);
 }
