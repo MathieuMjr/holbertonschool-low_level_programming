@@ -11,7 +11,7 @@
  */
 char *_strdup(char *str)
 {
-	char* dup;
+	char *dup;
 	int i = 0;
 	int j;
 
@@ -36,5 +36,5 @@ char *_strdup(char *str)
 		dup[j] = str[j];
 	}
 
-	return(dup);
+	return (dup);
 }
