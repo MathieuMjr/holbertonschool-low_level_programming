@@ -11,9 +11,9 @@
 int **alloc_grid(int width, int height)
 {
 	int **grid;
-	int i, j, k;
+	int i, j, k, l;
 
-	/* Vérification des paramètres, on refuse les dimensions nulles ou négatives */
+	/* Vérification des paramètres */
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
@@ -32,27 +32,14 @@ int **alloc_grid(int width, int height)
 		grid[i] = malloc(width * sizeof(int));
 		if (grid[i] == NULL)
 		{
-			/* Décrémenter i pour revenir à la dernière ligne allouée avant l'échec */
-			--i;
-
-			/* LIBÉRATION : Boucle pour libérer toutes les lignes allouées jusqu'ici */
-			/* REMARQUE : il est préférable d'utiliser une variable différente ici pour la boucle */
-			/* afin d'éviter toute confusion ou modification inattendue de 'i' dans la boucle for. */
-			while (i >= 0)
+			for (l = i; l >= 0; --i)
 			{
 				free(grid[i]);
-				--i;
 			}
-
-			/* IMPORTANT : Il faut aussi libérer le tableau de pointeurs 'grid' lui-même, */
-			/* sinon on crée une fuite mémoire ici. */
-			/* Exemple de libération à ajouter ici : */
-			/* free(grid); */
-
+			free(grid);
 			return (NULL);
 		}
 	}
-
 	/* Initialisation des éléments à 0 */
 	for (j = 0; j < height; ++j)
 	{
