@@ -2,11 +2,10 @@
 #include <stdlib.h>
 
 /**
- * alloc_grid - allocate memory for a 2D array
- * @width: number of columns
- * @height: number of rows
+ * free_grid - frees a 2D grid previously created
+ * @grid: array of pointer to columns of the grid
+ * @height: array of int ; rows of the grid
  *
- * Return: the pointer of pointer
  */
 void free_grid(int **grid, int height)
 {
