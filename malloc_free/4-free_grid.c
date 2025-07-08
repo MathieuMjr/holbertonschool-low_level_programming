@@ -12,8 +12,9 @@ void free_grid(int **grid, int height)
 	int i;
 
 	for (i = 0; i < height; ++i)
-	{
+	{	/* parcourir les lignes pour les effacer*/
 		free(grid[i]);
 	}
-	free(grid);
+	free(grid); /* effacer le tableau de pointeurs 
+				qui pointe sur les lignes*/
 }
