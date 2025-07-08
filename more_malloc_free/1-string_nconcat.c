@@ -49,7 +49,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			break;
 		}
 	}
-	printf("valeur de j;%d\n", j);
 	str[j + 1] = '\0';
 	return (str);
 }
