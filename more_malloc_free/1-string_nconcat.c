@@ -2,16 +2,19 @@
 #include <stdlib.h>
 
 /**
- * malloc_checked - return a pointer to allocated memory
- * or return 98 if fails
- * @b: size of memory space you want to allocate
- * Return: pointer to allocated memory
+ * string_nconcat - returns a string concatenated with
+ * n char of another string
+ * @s1: pointer to a string of char
+ * @s2: pointer to a 2nd string of char you want n char to
+ * be concatenated with s1
+ * @n: number of char from s2 you want to concatenante with s1
+ * Return: pointer to concatenated strings
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i = 0;
 	unsigned int j;
-	char* str;
+	char *str;
 
 	if (s1 == NULL)
 	{
@@ -48,5 +51,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	printf("valeur de j;%d\n", j);
 	str[j + 1] = '\0';
-	return(str);
+	return (str);
 }
