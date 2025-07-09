@@ -10,12 +10,18 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if (d == NULL)
-	{
-		return;
-	}
+/* Vérifie que le pointeur d n'est pas NULL pour éviter un accès invalide */
+    if (d == NULL)
+    {
+        return; /* Sort de la fonction si d est NULL */
+    }
 
-	(*d).name = name;
-	(*d).age = age;
-	(*d).owner = owner;
+    /* Affecte le nom passé en paramètre au membre name de la structure pointée par d */
+    (*d).name = name;
+
+    /* Affecte l'âge passé en paramètre au membre age */
+    (*d).age = age;
+
+    /* Affecte le nom du propriétaire passé en paramètre au membre owner */
+    (*d).owner = owner;
 }
