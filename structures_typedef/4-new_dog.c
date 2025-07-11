@@ -7,31 +7,38 @@
  * @name: pointeur to a name
  * @age: age of the dog
  * @owner: name of the dog's owner
- * return : a pointeur a struct type dog_t
+ * Return: a pointeur a struct type dog_t
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *pouet;
+	dog_t *d;
 
-	pouet = malloc(sizeof(dog_t));
-	if (pouet == NULL)
-	{	
+	d = malloc(sizeof(dog_t));
+	if (d == NULL)
+	{
 		return (NULL);
 	}
-	pouet->name = malloc(sizeof(name));
-	if (pouet->name == NULL)
-	{	
-		free(pouet);
+	d->name = malloc(_strlen(name) + 1);
+	if (d->name == NULL)
+	{
+		free(d);
 		return (NULL);
 	}
-	pouet->age = age;
-	pouet->owner = malloc(sizeof(owner));
-	if (pouet->owner == NULL)
-	{	
-		free(pouet->name);
-		free(pouet);
+	else
+	{
+		_strncpy(d->name, name, _strlen(name) + 1);
+	}
+	d->age = age;
+	d->owner = malloc(_strlen(owner) + 1);
+	if (d->owner == NULL)
+	{
+		free(d->name);
+		free(d);
 		return (NULL);
 	}
-
-	return (pouet);
+	else
+	{
+		_strncpy(d->owner, owner, _strlen(owner));
+	}
+	return (d);
 }
