@@ -106,7 +106,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		_strncpy(d->owner, owner, _strlen(owner));
+		_strncpy(d->owner, owner, _strlen(owner) + 1);
 	}
 	return (d);
 }
