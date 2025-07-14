@@ -17,3 +17,10 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 		action(array[i]);
 	}
 }
+/*deux fonctions permettent d'imprimer. 
+Une normalement, l'autre en hexa. 
+On doit donc donner à la fonction, que ce soit l'une
+ou l'autre, un nombre à imprimer.
+Nous voulons imprimer tout l'array.
+C'est donc l'argument qu'il faudra à la fonction
+qu'on appellera par la fonction action.*/
