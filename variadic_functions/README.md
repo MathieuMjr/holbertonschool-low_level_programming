@@ -1,0 +1,1 @@
+Here are some functions to practice variadic functions
