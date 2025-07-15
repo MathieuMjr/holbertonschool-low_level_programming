@@ -14,7 +14,8 @@ int main(int argc, char *argv[])
 		printf("%s\n", "Error");
 		exit(98);
 	}
-	if ((strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%") == 0) && argv[3] == 0)
+	if ((strcmp(argv[2], "/") == 0 && atoi(argv[3]) == 0)
+		|| (strcmp(argv[2], "%") == 0 && atoi(argv[3]) == 0))
 	{
 		printf("%s\n", "Error");
 		exit(100);
