@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 
 /**
- * print_numbers - function that prints n numbers
+ * print_strings - function that prints n strings
  * with a separator
  * @separator: char you want to use as separator
  * @n: number of undefined arguments
@@ -22,9 +22,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		/*if (va_arg(args, char*) == NULL)
 		{
-			printf("%s", NULL),
+			printf("%s", "(nil)");
 		}*/
-		printf("%s", va_arg(args, char*));
+			printf("%s", va_arg(args, char*));
 		if (i < n - 1)
 		{
 			printf("%s", separator);
