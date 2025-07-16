@@ -1,11 +1,12 @@
 #include "variadic_functions.h"
 
 /**
- * sum_them_all - function that does the sum
- * of n undefined arguments
+ * print_numbers - function that prints n numbers
+ * with a separator
+ * @separator: char you want to use as separator
  * @n: number of undefined arguments
  *
- * Return: sum of arguments
+ * Return: nothing
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
@@ -18,7 +19,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	if (separator == NULL)
 	{
-		return;
+		separator = "";
 	}
 	for (i = 0; i < n; ++i)
 	{
