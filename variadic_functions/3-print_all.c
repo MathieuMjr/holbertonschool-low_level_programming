@@ -14,7 +14,13 @@ void type_float(va_list args)
 }
 void type_string(va_list args)
 {
-	printf("%s", va_arg(args, char*));
+	const char *s = va_arg(args, char*);
+	if (s == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", s);
 }
 
 /*void (*get_data_type(char *s))
