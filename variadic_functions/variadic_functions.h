@@ -15,17 +15,16 @@ void type_float (va_list args);
 void type_string(va_list args);
 
 /**
- * struct type - structure that list
- * type of arg and pointer to the function
- * we need to use to print it
+ * struct type - associates a format specifier letter with a function
+ * to print an argument of that type.
  *
- * @letter: Letter code standing for a data type
- * @f: Function that print args of the data type given by letter
+ * @letter: format specifier character as a string.
+ * @f: pointer to function that prints an argument of the given type.
  */
-struct type
+typedef struct type
 {
 	char *letter;
 	void (*f)(va_list);
-};
+} type_t;
 
 #endif

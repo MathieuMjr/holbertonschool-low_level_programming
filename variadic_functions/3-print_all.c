@@ -66,15 +66,7 @@ void type_string(va_list args)
  */
 void print_all(const char * const format, ...)
 {
-	/**
-	* struct type - structure that list
-	* type of arg and pointer to the function
-	* we need to use to print it
-	 *
-	* @letter: Letter code standing for a data type
-	* @f: Function that print args of the data type given by letter
-	*/
-	struct type type[] = {
+	type_t data[] = {
 		{"c", type_char},
 		{"i", type_int},
 		{"f", type_float},
@@ -93,12 +85,12 @@ void print_all(const char * const format, ...)
 	{
 		int j = 0;
 
-		while (type[j].letter != NULL)
+		while (data[j].letter != NULL)
 		{
-			if (format[k] == type[j].letter[0])
+			if (format[k] == data[j].letter[0])
 			{
 				printf("%s", separator);
-				type[j].f(args);
+				data[j].f(args);
 				separator = ", ";
 			}
 			++j;
