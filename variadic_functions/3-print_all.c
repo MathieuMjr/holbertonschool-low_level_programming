@@ -67,11 +67,11 @@ while (format[k] != '\0')
 			{
 				printf("%s", separator);
 				type[j].f(args);
+				separator = ", ";
 			}
 			
 			++j;
 		}
-		separator = ", ";
 		++k;
 		
 	}
