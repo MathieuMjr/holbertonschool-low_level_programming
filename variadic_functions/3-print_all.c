@@ -57,11 +57,11 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-while (format[k] != '\0')
+while (format != NULL && format[k] != '\0')
 	{
 		int j = 0;
 		
-		while (format != NULL && type[j].letter != NULL)
+		while (type[j].letter != NULL)
 		{
 			if (format[k] == type[j].letter[0])
 			{
@@ -69,11 +69,9 @@ while (format[k] != '\0')
 				type[j].f(args);
 				separator = ", ";
 			}
-			
 			++j;
 		}
 		++k;
-		
 	}
 	printf("\n");
 }
