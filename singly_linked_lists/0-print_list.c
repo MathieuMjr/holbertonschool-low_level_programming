@@ -10,6 +10,11 @@ size_t print_list(const list_t *h)
 {
 	int count = 0;
 
+	/*ici pas besoin de compteur de boucle. 
+	Quand on le dernier élément de la liste, h->next == NULL
+	aka : pas d'adresse vers un prochain élément.
+	En faisant h = h->next, on lui donne donc NULL.
+	La boucle s'arrête : le pointer n'a plus de valeur. */
 	while (h != NULL)
 	{
 		if (h->str == NULL)
