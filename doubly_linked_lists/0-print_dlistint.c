@@ -1,9 +1,8 @@
 #include "lists.h"
 
 /**
- * add_node_end - create a new node at the end of a list
- * @head: adress of a pointer that point the first element
- * @str: a string of characters standing for the str member
+ * print_dlistint - read each element of a doubly linked list
+ * @h: adress of the 1st element of the list
  *
  * Return: a pointer to the newly created node
  */
