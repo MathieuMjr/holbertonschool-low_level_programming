@@ -1,66 +1,43 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - insert a new node
- * à index idx
- * @h: adress of head
- * @idx: index of the node you want to insert
- * before
- * @n: value you want to the new node n
+ * insert_dnodeint_at_index - insert a new node à index idx
+ * @h: adresse du head
+ * @idx: index où insérer le nœud
+ * @n: valeur du nœud à insérer
  *
- * Return: pointer to the new node created
+ * Return: pointeur vers le nouveau nœud
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int index = 0; /*va permettre de contrôler le nombre de déplacement
-							dans la liste*/
-	dlistint_t *node_prev; /*on stockera l'adresse qui sera avant notre nouveau noeud*/
-	dlistint_t *node_next;	/*on stockera l'adresse qui sera après notre nouveau noeud*/
-	dlistint_t *temp = *h;	/*on copie l'adresse de la tête*/
-	dlistint_t *new_node;	/*on prépare un pointeur pour pointer vers le nouveau noeud*/
+	unsigned int index = 0;
+	dlistint_t *prev_node;
+	dlistint_t *next_node;
+	dlistint_t *temp = *h;
+	dlistint_t *new_node;
+	dlistint_t **ptr;
 
-	if (*h == NULL)
+	if (*h == NULL || idx == 0)
 		return (add_dnodeint(h, n));
-	/*si la liste n'existe pas, la fonctio add_dnodeint peut gérer*/
-	/*attention toutefois... si on essaie d'insérer à un index > 0
-	dans une liste vide ? ...*/
-	if (idx == 0)
+
+	while (index < idx)
 	{
-		new_node = add_dnodeint(h, n);
-		return (new_node);
-	}
-	/*si l'index vaut 0, il faut inséré avant la tête
-	ce que fait très bien add_dnodeint. Mais notre boucle
-	while ne gère pas ce cas*/
-	while (index < idx - 1)
-	{
-		if (temp == NULL)/*si on a dépassél a liste, il faut retourner null*/
+		if (temp == NULL)
 			return (NULL);
 		temp = temp->next;
 		index++;
 	}
-	/*on va parcourir la liste depuis la tête
-	Et s'arrêter avant l'insertion.*/
 	if (temp == NULL)
 		return (NULL);
-	/*au dernier tour de boucle, j'ai incrémenté index. MAIS
-	il ne respecte plus la condition d'entrée. Conséquence, il faut 
-	retester si temp est null, car il était vérifié dans la boucle seulement.
-	J'aurai préféré que la boucle s'arrête avant...*/
-	node_prev = temp; /*comme temp s'arrête avant l'insertion
-						temp est l'adresse avant l'insertion*/
-	node_next = temp->next; /*le noeud qui suivra l'insertion
-							sera le noeud vers lequel pointe temp !*/
+	next_node = temp;
+	prev_node = temp->prev;
 
-	new_node = malloc(sizeof(dlistint_t)); /* allocation mémoire*/
-	if (new_node == NULL) /*vérification de la réussite de l'allocation*/
-		return (NULL);
-	new_node->prev = node_prev; /*le nouveau noeud pointe en prev vers temp (node_prev)*/
-	new_node->next = node_next;/* le nouveau noeud pointe en next vers node_next*/
-	new_node->n = n;
-	node_prev->next = new_node;/*le noeud avant celui qu'on a inséré doit pointer vers le nouveau noeud*/
-	if (node_next != NULL)			/* le noeud suivant l'insertion doit exister !*/
-		node_next->prev = new_node;	/*si c'est bien le cas il doit pointer en prev vers le nouveau noeud*/
-									/* si non... ?*/
+	ptr = &temp;
+	new_node = add_dnodeint(ptr, n);
+	new_node->prev = prev_node;
+	new_node->next = next_node;
+	prev_node->next = new_node;
+	next_node->prev = new_node;
+
 	return (new_node);
 }
