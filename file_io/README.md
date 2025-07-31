@@ -1,0 +1,1 @@
+Here are function to practice file input and output
