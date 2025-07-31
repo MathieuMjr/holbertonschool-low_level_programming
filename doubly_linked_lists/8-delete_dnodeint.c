@@ -3,7 +3,7 @@
 /**
  * delete_dnodeint_at_index - delete a node
  * at index
- * @h: adress of head
+ * @head: adress of head
  * @index: index of the node you want to delete
  *
  * Return: pointer to the new node created
