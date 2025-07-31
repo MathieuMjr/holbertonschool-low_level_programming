@@ -1,5 +1,5 @@
 #include "lists.h"
-
+/*NE FONCTIONNE PAS. REPARTI DE 0 SUR 8-DELETE_DNOEINT.C*/
 /**
  * delete_dnodeint_at_index - delete a node
  * at index
