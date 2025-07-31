@@ -17,22 +17,32 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (*head == NULL)
 		return (-1);
-	
-	while (temp->next != NULL && i < index)
+	if (index == 0)
 	{
+		if (temp->next == NULL)
+		{
+			*head = NULL;
+			free(*head);
+			return (1);
+		}
 		temp = temp->next;
-		++i;
+		*head = temp;
+		free(temp->prev);
+		return (1);
 	}
-	if (i < index)
-		return (-1); /*out range*/
+	while (i < index)
+	{
+		if (temp == NULL)
+			return (-1);
+		temp = temp->next;
+		i++;
+	}
+	if (temp == NULL)
+		return (-1);
 	prev_node = temp->prev;
 	next_node = temp->next;
-	if (next_node != NULL)
-		next_node->prev = prev_node;
-	if (prev_node != NULL)
-		prev_node->next = next_node;
-	if (index == 0)
-		*head = next_node;
+	prev_node->next = temp->next;
+	next_node->prev = temp->prev;
 	free(temp);
 	return (1);
 }
