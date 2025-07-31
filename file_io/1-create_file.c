@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * read_textfile - read and print a text file on
- * stdout
+ * create_file - create a file or, if already exists
+ * erase its content
  * @filename: name of the file to open
- * @letters: number of byte to read and write
+ * @text_content: text to write in the file
  *
- * Return: number of byte written
+ * Return: 0 if succeed, -1 if not
  */
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
 	int i = 0;
 	ssize_t written;
-	
+
 	if (filename == NULL)
 		return (-1);
 
@@ -23,7 +23,7 @@ int create_file(const char *filename, char *text_content)
 		text_content = "";
 	else
 	{
-		while(text_content[i] != '\0')
+		while (text_content[i] != '\0')
 		{
 			++i;
 		}
