@@ -1,0 +1,1 @@
+here are function to practice hashtables
