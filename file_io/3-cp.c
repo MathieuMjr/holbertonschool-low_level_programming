@@ -18,14 +18,14 @@ int cp_file(const char *src_filename, const char *dest_filename)
 	src_fd = open(src_filename, O_RDONLY);
 	if (src_fd == -1)
 	{
-		dprintf(2, "Error: Can't read from fil %s\n", src_filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from fil %s\n", src_filename);
 		exit(98);
 	}
 	dest_fd = open(dest_filename, O_CREAT | O_WRONLY | O_TRUNC,
 		S_IWUSR | S_IRUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (dest_fd == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", dest_filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_filename);
 		exit(99);
 	}
 	buffer = malloc(1024);
@@ -35,14 +35,14 @@ int cp_file(const char *src_filename, const char *dest_filename)
 	{
 		if (been_read == -1)
 		{
-			dprintf(2, "Error: Can't read from file %s\n", src_filename);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_filename);
 			free(buffer);
 			exit(98);
 		}
 		written = write(dest_fd, buffer, been_read);
 		if (written == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", dest_filename);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_filename);
 			free(buffer);
 			exit(99);
 		}
@@ -52,12 +52,12 @@ int cp_file(const char *src_filename, const char *dest_filename)
 	close(dest_fd);
 	if (src_fd == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", src_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src_fd);
 		exit(100);
 	}
 	if (dest_fd == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", dest_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest_fd);
 		exit(100);
 	}
 	return (1);
@@ -72,7 +72,7 @@ int main(int ac, char **av)
 {
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	cp_file(av[1], av[2]);
