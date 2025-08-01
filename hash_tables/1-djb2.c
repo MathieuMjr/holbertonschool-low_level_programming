@@ -16,3 +16,9 @@ unsigned long int hash_djb2(const unsigned char *str)
 	}
 	return (hash);
 }
+
+/*la fonction de hachage telle quelle ne retournera pas un index
+Elle transformera la chaine de caractère en un chiffre, sans doute bcp plus grand
+que la taille de notre array.
+La function suivante va transformer cette valeur en index. 
+Ici on est a une étape intermédiaire*/
