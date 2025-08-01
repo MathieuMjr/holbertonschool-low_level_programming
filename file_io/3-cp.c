@@ -71,7 +71,8 @@ int cp_file(const char *src_filename, const char *dest_filename)
 
 /**
  * main - check the code
- *
+ * @ac: number of args
+ * @av: array containing args given to the function
  * Return: Always 0.
  */
 int main(int ac, char **av)
