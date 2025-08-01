@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_et - create a new node and store
+ * hash_table_set - create a new node and store
  * it's adresse in hashtable
  * @ht: adress of a hashtable
  * @key: key of the values
