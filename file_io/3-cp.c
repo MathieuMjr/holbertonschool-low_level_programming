@@ -78,7 +78,7 @@ int main(int ac, char **av)
 		/*peut être que : Usage: cp file_from file_to est attendu*/
 		exit(97);
 	}
-	res = cp_file(av[1], av[2]);
-	return (res);
+	cp_file(av[1], av[2]);
+	return (0);
 }
 
