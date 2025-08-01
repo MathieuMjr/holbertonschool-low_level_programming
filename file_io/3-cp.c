@@ -72,8 +72,7 @@ int main(int ac, char **av)
 {
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: %s %s\n", av[1], av[2]);
-		/*peut être que : Usage: cp file_from file_to est attendu*/
+		dprintf(2, "Usage: cp file_from file_to");
 		exit(97);
 	}
 	cp_file(av[1], av[2]);
