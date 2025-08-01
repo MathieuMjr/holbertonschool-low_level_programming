@@ -47,6 +47,12 @@ int cp_file(const char *src_filename, const char *dest_filename)
 			exit(99);
 		}
 	}
+	if (been_read == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_filename);
+		free(buffer);
+		exit(98);
+	}
 	free(buffer);
 	close(src_fd);
 	close(dest_fd);
