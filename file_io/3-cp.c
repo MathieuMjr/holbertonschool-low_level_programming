@@ -70,8 +70,6 @@ int cp_file(const char *src_filename, const char *dest_filename)
  */
 int main(int ac, char **av)
 {
-	int res;
-
 	if (ac != 3)
 	{
 		dprintf(2, "Usage: %s %s\n", av[1], av[2]);
