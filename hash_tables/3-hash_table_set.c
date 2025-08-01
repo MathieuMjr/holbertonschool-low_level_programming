@@ -36,5 +36,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		new_node->next = temp;
 	}
 
-	return (0);
+	return (1);
 }
