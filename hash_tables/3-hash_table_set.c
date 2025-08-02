@@ -36,8 +36,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		check = ht->array[index];
 		while (check->key != key || check != NULL)
 		{
-			if (check->key == key)
+			if (check->next->key == key)
 			{
+				check = check->next;
 				check->value = (char *)value;
 				temp = check;
 				return (1);
