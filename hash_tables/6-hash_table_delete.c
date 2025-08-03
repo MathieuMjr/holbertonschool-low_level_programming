@@ -19,7 +19,7 @@ void hash_table_delete(hash_table_t *ht)
 	while (array_index < ht->size)
 	{
 		reading_head = ht->array[array_index];
-		while(reading_head != NULL)
+		while (reading_head != NULL)
 		{
 			if (reading_head != NULL)
 			{
