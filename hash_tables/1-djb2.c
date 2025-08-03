@@ -8,7 +8,9 @@ unsigned long int hash_djb2(const unsigned char *str)
 {
 	unsigned long int hash;
 	int c;
-
+	/*ce script nous a été donné tel quel
+	La table de hachage converti la chaine de charactère "key" en une suite
+	de chiffre selon un code qui a été défini ci dessous.*/
 	hash = 5381;
 	while ((c = *str++))
 	{
